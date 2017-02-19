@@ -22,9 +22,9 @@ public class Snake extends Application {
         UP, DOWN, LEFT, RIGHT
     }
 
-    public static final int BLOCK_SIZE = 40;
-    public static final int APP_W = 20 * BLOCK_SIZE;
-    public static final int APP_H = 20 * BLOCK_SIZE;
+    private static final int BLOCK_SIZE = 40;
+    private static final int APP_W = 20 * BLOCK_SIZE;
+    private static final int APP_H = 20 * BLOCK_SIZE;
 
     private Direction direction = Direction.RIGHT;
     private boolean moved = false;
@@ -161,6 +161,22 @@ public class Snake extends Application {
                         direction = Direction.LEFT;
                     break;
                 case D:
+                    if (direction != Direction.LEFT)
+                        direction = Direction.RIGHT;
+                    break;
+                case UP:
+                    if (direction != Direction.DOWN)
+                        direction = Direction.UP;
+                    break;
+                case DOWN:
+                    if (direction != Direction.UP)
+                        direction = Direction.DOWN;
+                    break;
+                case LEFT:
+                    if (direction != Direction.RIGHT)
+                        direction = Direction.LEFT;
+                    break;
+                case RIGHT:
                     if (direction != Direction.LEFT)
                         direction = Direction.RIGHT;
                     break;
